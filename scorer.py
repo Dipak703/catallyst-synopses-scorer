@@ -1,6 +1,8 @@
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
 import textstat
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 # Load sentence transformer model (lightweight for fast testing)
 model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -22,8 +24,16 @@ def compute_clarity_score(synopsis):
     return score
 
 def compute_coherence_score(synopsis):
-    # Placeholder: Assuming high coherence for basic implementation
-    return 25  # Out of 25
+    tokens = synopsis.split()
+    embeddings = compute_embedding(tokens)
+    similarities = []
+    for i in range(len(embeddings) - 1):
+        sim = cosine_similarity([embeddings[i]], [embeddings[i + 1]])[0][0]
+        similarities.append(sim)
+
+
+    coherence_score = np.max(similarities)
+    return coherence_score*25 # Out of 25
 
 def evaluate_synopsis(article, synopsis):
     similarity_score = compute_similarity_score(article, synopsis)
