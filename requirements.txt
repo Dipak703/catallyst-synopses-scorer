@@ -1,0 +1,13 @@
+streamlit
+spacy
+sentence-transformers
+scikit-learn
+textstat
+PyPDF2
+torch
+fastapi
+uvicorn
+jinja2
+python-dotenv
+together==1.5.6
+
