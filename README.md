@@ -32,7 +32,7 @@ A privacy-conscious GenAI-powered web app that evaluates the quality of a synops
 ---
 ⚙️ How It Works
 
-1. *User Uploads Files*: An article and its synopsis (PDF, DOCX, or TXT)
+1. *User Uploads Files*: An article and its synopsis (PDF or TXT)
 2. *Text Processing*: The files are parsed and anonymized
 3. *Scoring*: A custom evaluation score is computed
 4. *LLM Feedback*: Together AI’s LLaMA 3 model provides 2–3 sentence feedback
