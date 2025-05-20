@@ -10,4 +10,6 @@ uvicorn
 jinja2
 python-dotenv
 together==1.5.6
+sklearn
+
 
