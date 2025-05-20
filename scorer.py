@@ -30,8 +30,6 @@ def compute_coherence_score(synopsis):
     for i in range(len(embeddings) - 1):
         sim = cosine_similarity([embeddings[i]], [embeddings[i + 1]])[0][0]
         similarities.append(sim)
-
-
     coherence_score = np.max(similarities)
     return coherence_score*25 # Out of 25
 
